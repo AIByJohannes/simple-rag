@@ -11,9 +11,9 @@ This is a RAG system, written mostly in Python. It is a simple chatbot that can 
 - Python API
   - LlamaIndex
   - FastAPI
-- Ollama for LLM inference
+- vLLM for LLM inference
   - Nomic embeddings
-  - Phi-3 medium
+  - Llama 3.1
 - Docker for deployment
 - Use PostgreSQL with pgvector as database
 
