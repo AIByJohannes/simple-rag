@@ -4,24 +4,20 @@
 This is a RAG system, written mostly in Python. It is a simple chatbot that can answer questions based on it's knowledge. 
 
 ## Functional Requirements
-1. RAG system, accessible via API
-2. Web app with UI for user interactions
+1. traditional simple RAG system
+2. RAG system accessible over API  
+3. Web app with UI for chat
 
 ## Technical Requirements
-- Python API
-  - LlamaIndex
-  - FastAPI
+- Docker for deployment
+- Database
+  - Use Supabase with pgvector
 - vLLM for LLM inference
   - Nomic embeddings
-  - Llama 3.1
-- Docker for deployment
-- Use PostgreSQL with pgvector as database
-
-# Roadmap
-- Deployement with Kubenetes
-- Web App with Spring Boot and Angular
-
-## Out of scope
-- Vision
-- Agents
-- Custom LLMs
+  - Llama 8B
+- Python API
+  - LangChain
+  - FastAPI
+- Web App
+  - Vite + React
+  - FastAPI
