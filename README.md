@@ -1,7 +1,7 @@
-# RAG System 
+# Simple RAG
 
 ## Description
-This is a RAG system, written mostly in Python. It is a simple chatbot that can answer questions based on it's knowledge. 
+This is a RAG system, written in Python. It is a simple chatbot that can answer questions based on it's knowledge. 
 
 ## Functional Requirements
 1. traditional simple RAG system
@@ -10,8 +10,9 @@ This is a RAG system, written mostly in Python. It is a simple chatbot that can 
 
 ## Technical Requirements
 - Docker for deployment
-- Database
-  - Use Supabase with pgvector
+- MongoDB
+  - application data
+  - vector search
 - vLLM for LLM inference
   - Nomic embeddings
   - Llama 8B
