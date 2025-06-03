@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./docker/api.Dockerfile
+    volumes:
+      - ./app:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongo
+      - vllm
+    environment:
+      # Ensure VLLM_URL is set if your app expects it
+      # VLLM_URL: http://vllm:4891
+      # Example, adjust if your chatbot.py or other services need it
+      PYTHONUNBUFFERED: 1
+
+
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/web.Dockerfile
+    volumes:
+      - ./web:/app
+      # The node_modules directory should not be mounted from the host
+      # It will be populated by npm install within the container
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  vllm:
+    image: ubuntu:latest # Placeholder image
+    # This is a placeholder for the vLLM service.
+    # Proper vLLM setup would require a specific Docker image with GPU support (e.g., from NVIDIA NGC)
+    # and appropriate runtime arguments (e.g., --gpus all for Docker).
+    # The actual command would be to start the vLLM OpenAI compatible server.
+    # For now, we'll just run a placeholder command.
+    command: /bin/bash -c "echo vLLM placeholder running && sleep infinity"
+    ports:
+      - "4891:4891" # Port that chatbot.py was trying to use
+
+volumes:
+  mongo-data:
