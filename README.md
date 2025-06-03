@@ -1,4 +1,9 @@
 # Simple RAG Chatbot
+![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/-Vite-646CFF?style=flat&logo=vite&logoColor=white)
+![Langchain](https://img.shields.io/badge/Langchain-008443?style=flat&logo=langchain&logoColor=white)
+![FastAPI](https://img.shields.io/badge/-FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
+![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=flat&logo=mongodb&logoColor=white)
 
 ## Description
 This project implements a Retrieval Augmented Generation (RAG) system. It provides a chatbot interface that can answer questions based on a knowledge base. The system is containerized using Docker for ease of deployment and development.
@@ -86,6 +91,3 @@ The project aims to use the following technologies:
 - **LLM Inference:** Placeholder for vLLM (or a similar solution) for serving Large Language Models (e.g., Llama 8B) and embeddings (e.g., Nomic).
 - **Backend API:** Python with FastAPI and LangChain.
 - **Frontend Web App:** Vite + React.
-
----
-*This README is a work in progress and will be updated as the project evolves.*
